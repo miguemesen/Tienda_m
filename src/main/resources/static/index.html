@@ -4,21 +4,100 @@
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8">
+        <link href="css/estilos.css" rel="stylesheet"/>
     </head>
     <body>
-        <a href="ejemplo4.html">Back</a>
-        <a href="index.html">Home</a>
-        <a href="ejemplo2.html">Next</a><hr>
+        <header>
+            <a href="index.html">
+                <h1>TechShop</h1>
+            </a>
+            <nav>
+                <a href="ejemplo4.html">&triangleleft;</a>
+                <a href="ejemplo2.html">&triangleright;</a>
+                <a href="ejemplo4.html">Nosotros</a>
+                <a href="ejemplo2.html">Gestion</a>
+                <a href="ejemplo2.html">Ventas</a>
+                <hr>
+            </nav>
+        </header>
+        <aside>
+            <h2 class="aviso">Ultimas noticias</h2>
+            <p>Según el informe de ventas el producto más vendido de nuestra tienda es el iPhone 15. Muchas gracias por preferirnos.</p>
+        </aside>
         
-        <h1 style="text-align: center; background-color: black; color: white">Home</h1>
-        <p>Esta es la primera página del curso</p>
+        <section>
+            <h2>Nuestros productos</h2>
+            <article>
+                <h3>iPhone 15</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit class quisque dictum, maecenas magna viverra aliquet habitant varius in condimentum sociis at nisi, convallis molestie tristique imperdiet facilisis inceptos tellus tempor habitasse. Curabitur odio sem libero fames vulputate justo tempor nunc mollis curae commodo facilisis natoque torquent ornare lectus nisi, nulla ultrices et aenean pharetra cum tempus conubia tristique vehicula ultricies ante fusce mus dignissim inceptos. Aliquam vulputate maecenas rutrum arcu curabitur, sodales faucibus scelerisque dis porttitor integer, nisl neque volutpat risus. Condimentum ac sapien cras diam molestie metus erat tellus hac venenatis, fames euismod phasellus neque consequat per nec suspendisse libero, non mattis netus aliquet nisl felis sollicitudin volutpat tristique.</p>
+                <figure>
+                    <img src="https://img-prd-pim.poorvika.com/prodvarval/Apple-iphone-15-pro-Max-black-titanium-Front-Back-View-Thumbnail.png" height="150px"/>
+                    <figcaption>$1000
+                        <a href="#">Add</a>
+                    </figcaption>
+                </figure>
+                <hr/>
+            </article>
+            <article>
+                <h3>iPhone 14</h3>
+                <p>Inceptos habitasse convallis dis euismod quam morbi posuere libero orci velit tempus rutrum dapibus lacinia, mauris leo aenean nulla nunc volutpat varius placerat consequat egestas facilisi class dignissim. Tincidunt phasellus quis porttitor blandit fringilla nullam molestie rutrum gravida, donec dictumst ligula sodales cras sem pulvinar. Nam cras commodo tempor fringilla mus nibh montes litora viverra, orci inceptos etiam nec dictum cum tellus risus, imperdiet ornare id a vivamus penatibus curabitur magna. Hac sociis luctus justo nascetur scelerisque aptent nam, molestie arcu morbi bibendum quis nunc, at mauris quam venenatis mus nec.</p>
+                <figure>
+                    <img src="https://img-prd-pim.poorvika.com/prodvarval/Apple-iPhone-14-Plus-mightnight-thumnaill.png" height="150px"/>
+                    <figcaption>$800
+                        <a href="#">Add</a>
+                    </figcaption>
+                </figure>
+                <hr/>
+            </article>
+            <article>
+                <h3>iPhone 13</h3>
+                <p>Facilisi maecenas eget enim ac <span class="aviso">leo quis purus et</span>, vel risus suspendisse in praesent aenean gravida taciti mattis, integer curabitur nisl bibendum porta vehicula imperdiet. Sagittis penatibus litora inceptos semper ante mi blandit, maecenas quisque torquent parturient eros nulla, etiam cras leo venenatis proin curabitur. Turpis pellentesque tristique enim in fringilla rhoncus lobortis leo euismod sociosqu, faucibus fames sociis rutrum lacus hendrerit ligula torquent sed senectus, bibendum eget nisi per sapien diam egestas ut sodales.</p>
+                <figure>
+                    <img src="https://img-prd-pim.poorvika.com/prodvarval/Apple-iPhone-13-Green-thumnail.png" height="150px"/>
+                    <figcaption>$700
+                        <a href="#">Add</a>
+                    </figcaption>
+                </figure>
+                <hr/>
+            </article>
+            <article>
+                <h3>Listado de productos</h3>
+                <table border="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Código</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>iPhone 15</td>
+                            <td>$1000</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>iPhone 14</td>
+                            <td>$800</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>iPhone 13</td>
+                            <td>$700</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit class quisque dictum, maecenas magna viverra aliquet habitant varius in condimentum sociis at nisi, convallis molestie tristique imperdiet facilisis inceptos tellus tempor habitasse. Curabitur odio sem libero fames vulputate justo tempor nunc mollis curae commodo facilisis natoque torquent ornare lectus nisi, nulla ultrices et aenean pharetra cum tempus conubia tristique vehicula ultricies ante fusce mus dignissim inceptos. Aliquam vulputate maecenas rutrum arcu curabitur, sodales faucibus scelerisque dis porttitor integer, nisl neque volutpat risus. Condimentum ac sapien cras diam molestie metus erat tellus hac venenatis, fames euismod phasellus neque consequat per nec suspendisse libero, non mattis netus aliquet nisl felis sollicitudin volutpat tristique.</p>
+            </article>
+        </section>
 
-        <p>Inceptos habitasse convallis dis euismod quam morbi posuere libero orci velit tempus rutrum dapibus lacinia, mauris leo aenean nulla nunc volutpat varius placerat consequat egestas facilisi class dignissim. Tincidunt phasellus quis porttitor blandit fringilla nullam molestie rutrum gravida, donec dictumst ligula sodales cras sem pulvinar. Nam cras commodo tempor fringilla mus nibh montes litora viverra, orci inceptos etiam nec dictum cum tellus risus, imperdiet ornare id a vivamus penatibus curabitur magna. Hac sociis luctus justo nascetur scelerisque aptent nam, molestie arcu morbi bibendum quis nunc, at mauris quam venenatis mus nec.</p>
-
-        <p>Facilisi maecenas eget enim ac leo quis purus et, vel risus suspendisse in praesent aenean gravida taciti mattis, integer curabitur nisl bibendum porta vehicula imperdiet. Sagittis penatibus litora inceptos semper ante mi blandit, maecenas quisque torquent parturient eros nulla, etiam cras leo venenatis proin curabitur. Turpis pellentesque tristique enim in fringilla rhoncus lobortis leo euismod sociosqu, faucibus fames sociis rutrum lacus hendrerit ligula torquent sed senectus, bibendum eget nisi per sapien diam egestas ut sodales.</p>
-
-        
+        <footer>
+            Derechos Reservados TechShop 2023 &COPY;
+        </footer>
     </body>
 </html>
