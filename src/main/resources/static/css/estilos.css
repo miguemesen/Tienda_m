@@ -1,19 +1,3 @@
-section p {
-    color: blue;
-}
-
-aside p {
-    color: red;
-}
-
-h1, h2, h3 {
-    font-family: cursive;
-}
-
-.aviso {
-    color: yellow;
-    background-color: red
-}
 
 tr:nth-child(odd) {
     background-color: #3382c1;
@@ -29,37 +13,67 @@ thead tr th{
     background-color: black
 }
 
-nav a {
-    text-decoration: none;
-    background-color: green;
-    color: white;
-}
-
-nav a:hover {
-    background-color: red;
-    color: yellow;
-}
-
 body {
     box-sizing: border-box;
     margin: 0;
-    padding: 80px 20px 0;
+    padding: 90px 20px 0;
     background-color: whitesmoke;
 }
 
-header {
+.header {
     position: fixed;
-    background-color: blue;
+    background-color: #076AF0;
     top: 0;
     left: 0;
-    height: 80px;
+    height: 90px;
     width: 100%;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 90px
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu{
+    display: flex;
+    /*gap: 0 10px;*/
+    list-style: none;
+    margin-right: 40px
+}
+
+.nav-menu-item{
+    font-size: 18px;
+    line-height: 90px;
+    margin: 0 10px;
+}
+
+.nav-menu-link{
+    padding: 8px 12px;
+    transition: 0.5s;
+}
+
+.nav-menu-link:hover{
+    background-color: #024070;
+    border-radius: 10px;
 }
 
 aside {
     position: fixed;
     background-color: bisque;
-    top: 80px;
+    top: 90px;
     left: 0;
     bottom: 20px;
     width: 20%;
@@ -69,7 +83,7 @@ section {
     overflow-y: scroll;
     position: fixed;
     background-color: aquamarine;
-    top: 80px;
+    top: 90px;
     left: 20%;
     bottom: 20px;
     width: 80%;
