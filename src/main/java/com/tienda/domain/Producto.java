@@ -5,6 +5,7 @@ package com.tienda.domain;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 @Entity
@@ -24,10 +25,14 @@ public class Producto implements Serializable {
     private String rutaImagen;
     private Boolean activo;
     
-    @ManyToOne
+    @ToString.Exclude
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="id_categoria")
     Categoria categoria;
 
+    public Categoria getCategoria() {
+        return this.categoria;
+    }
     public boolean isActivo() {
         return activo;
     }

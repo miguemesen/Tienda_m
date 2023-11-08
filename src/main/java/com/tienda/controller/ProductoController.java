@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,8 +31,6 @@ public class ProductoController {
         model.addAttribute("totalProductos", productos.size());
         var categorias = categoriaService.getCategorias(true);
         model.addAttribute("categorias", categorias);
-        
-        
         return "/producto/listado";
     }
     
@@ -45,16 +44,21 @@ public class ProductoController {
     
     @PostMapping("/guardar")
     public String productoGuardar(Producto producto,
-            @RequestParam("imagenFile") MultipartFile imagenFile) {        
+            @RequestParam("imagenFile") MultipartFile imagenFile) {  
+        Producto productoPorGuardar = productoService.getProducto(producto);
+        productoPorGuardar.setDescripcion(producto.getDescripcion());
+        productoPorGuardar.setDetalle(producto.getDetalle());
+        productoPorGuardar.setPrecio(producto.getPrecio());
+        productoPorGuardar.setExistencias(producto.getExistencias());
         if (!imagenFile.isEmpty()) {
-            productoService.save(producto);
+            productoService.save(productoPorGuardar);
             producto.setRutaImagen(
                     firebaseStorageService.cargaImagen(
                             imagenFile, 
                             "producto", 
-                            producto.getIdProducto()));
+                            productoPorGuardar.getIdProducto()));
         }
-        productoService.save(producto);
+        productoService.save(productoPorGuardar);
         return "redirect:/producto/listado";
     }
 
