@@ -45,14 +45,20 @@ public class ProductoController {
     @PostMapping("/guardar")
     public String productoGuardar(Producto producto,
             @RequestParam("imagenFile") MultipartFile imagenFile) {  
-        Producto productoPorGuardar = productoService.getProducto(producto);
-        productoPorGuardar.setDescripcion(producto.getDescripcion());
-        productoPorGuardar.setDetalle(producto.getDetalle());
-        productoPorGuardar.setPrecio(producto.getPrecio());
-        productoPorGuardar.setExistencias(producto.getExistencias());
+        System.out.println("producto "+producto);
+        Producto productoPorGuardar = producto;
+        if(producto.getIdProducto() != null) {
+            productoPorGuardar = productoService.getProducto(producto);
+            productoPorGuardar.setDescripcion(producto.getDescripcion());
+            productoPorGuardar.setDetalle(producto.getDetalle());
+            productoPorGuardar.setPrecio(producto.getPrecio());
+            productoPorGuardar.setExistencias(producto.getExistencias());            
+            productoPorGuardar.setActivo(producto.getActivo());            
+        }
+        System.out.println("producto por guardar"+productoPorGuardar);
         if (!imagenFile.isEmpty()) {
             productoService.save(productoPorGuardar);
-            producto.setRutaImagen(
+            productoPorGuardar.setRutaImagen(
                     firebaseStorageService.cargaImagen(
                             imagenFile, 
                             "producto", 

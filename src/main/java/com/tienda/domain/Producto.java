@@ -26,7 +26,7 @@ public class Producto implements Serializable {
     private Boolean activo;
     
     @ToString.Exclude
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne(cascade=CascadeType.MERGE)
     @JoinColumn(name="id_categoria")
     Categoria categoria;
 
@@ -40,8 +40,4 @@ public class Producto implements Serializable {
         public Producto() {
     }
 
-    public Producto(String description, boolean activo) {
-        this.descripcion = descripcion;
-        this.activo = activo;
-    }
 }

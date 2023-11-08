@@ -24,19 +24,15 @@ public class Categoria implements Serializable {
     private Boolean activo;
     
     @ToString.Exclude
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade=CascadeType.MERGE)
     @JoinColumn(name="id_categoria", updatable=false)
     private List<Producto> productos;
 
-    public boolean isActivo() {
-        return activo;
-    }
     
     public Categoria() {
     }
 
     public Categoria(String description, boolean activo) {
         this.descripcion = descripcion;
-        this.activo = activo;
     }
 }
