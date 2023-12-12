@@ -43,6 +43,12 @@ public class ReporteController {
             throws IOException {
         return reporteService.generaReporte("usuarios",null, tipo);        
     }
+    
+     @GetMapping("/categorias")
+    public ResponseEntity<Resource> reporteCategorias(@RequestParam String tipo) 
+            throws IOException {
+        return reporteService.generaReporte("categorias",null, tipo);        
+    }
    
     @GetMapping("/ventas")
     public ResponseEntity<Resource> reporteVentas(@RequestParam String tipo) 
@@ -60,6 +66,18 @@ public class ReporteController {
         parametros.put("fechaIni", fechaIni);
         parametros.put("fechaFin", fechaFin);
         return reporteService.generaReporte("ventasTotales",parametros, tipo);        
+    }
+    
+    @GetMapping("/productos")
+    public ResponseEntity<Resource> reporteProductos(
+            @RequestParam Double precioMenor,
+            @RequestParam Double precioMayor,
+            @RequestParam String tipo) 
+            throws IOException {
+        Map<String,Object> parametros = new HashMap();
+        parametros.put("precioMenor", precioMenor);
+        parametros.put("precioMayor", precioMayor);
+        return reporteService.generaReporte("productos",parametros, tipo);        
     }
     
 }
